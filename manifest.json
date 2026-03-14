@@ -2,7 +2,7 @@
   "name": "Scan&Go Pro",
   "short_name": "Scan&Go",
   "description": "Gestión de Inventario y Suscripciones",
-  "start_url": "./index.html",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#f8fafc",
   "theme_color": "#2563eb",
