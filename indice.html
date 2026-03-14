@@ -1,209 +1,72 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="theme-color" content="#2563eb">
-    
-    <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" href="[https://cdn-icons-png.flaticon.com/512/3244/3244125.png](https://cdn-icons-png.flaticon.com/512/3244/3244125.png)">
-
-    <title>Scan&Go Pro</title>
-    
-    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
-    <style>
-        @import url('[https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap)');
-        body { 
-            font-family: 'Inter', sans-serif; 
-            -webkit-tap-highlight-color: transparent;
-            user-select: none;
-            padding-top: env(safe-area-inset-top);
-        }
-        .bottom-nav { 
-            position: fixed; 
-            bottom: 0; 
-            width: 100%; 
-            height: 90px; 
-            background: #111827; 
-            display: flex; 
-            justify-content: space-around; 
-            align-items: center; 
-            z-index: 50; 
-            padding-bottom: env(safe-area-inset-bottom);
-            transition: transform 0.3s ease;
-        }
-        .view-container { display: none; padding-bottom: 120px; }
-        .view-container.active { display: block; animation: fadeIn 0.2s ease-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        
-        .product-card { transition: all 0.2s; }
-        .product-card.selected { border: 2px solid #3b82f6; background-color: #eff6ff; transform: scale(1.02); }
-        .toast { position: fixed; top: 50px; left: 50%; transform: translateX(-50%); z-index: 200; opacity: 0; transition: all 0.3s; pointer-events: none; }
-        .toast.show { opacity: 1; top: 60px; }
-    </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    body {background-color: #0a0a0a}
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.0px 'Helvetica Neue'; color: #434343; -webkit-text-stroke: #434343}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 8.0px 'Helvetica Neue'; color: #757575; -webkit-text-stroke: #757575; background-color: #141414}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 8.0px 'Helvetica Neue'; color: #25bd4c; -webkit-text-stroke: #25bd4c; background-color: #141414}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 8.0px 'Helvetica Neue'; color: #f08d0e; -webkit-text-stroke: #f08d0e}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 8.0px 'Helvetica Neue'; color: #434343; -webkit-text-stroke: #434343}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 8.0px 'Helvetica Neue'; color: #434343; -webkit-text-stroke: #434343; background-color: #0a0a0a}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 8.0px 'Helvetica Neue'; color: #434343; -webkit-text-stroke: #434343; min-height: 10.0px}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 7.0px 'Helvetica Neue'; color: #434343; -webkit-text-stroke: #434343}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 26.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 26.0px 'Helvetica Neue'; color: #e82c35; -webkit-text-stroke: #e82c35}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #dfdfdf; -webkit-text-stroke: #dfdfdf; min-height: 15.0px}
+    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.0px 'Helvetica Neue'; color: #dfdfdf; -webkit-text-stroke: #000000; background-color: #f08d0e}
+    p.p14 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Helvetica Neue'; color: #f08d0e; -webkit-text-stroke: #f08d0e}
+    p.p15 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px 'Helvetica Neue'; color: #dfdfdf; -webkit-text-stroke: #dfdfdf}
+    p.p16 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #f08d0e; -webkit-text-stroke: #f08d0e}
+    p.p17 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 36.0px 'Helvetica Neue'; color: #dfdfdf; -webkit-text-stroke: #dfdfdf}
+    p.p18 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Helvetica Neue'; color: #757575; -webkit-text-stroke: #757575; background-color: #141414}
+    p.p19 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #101010; background-color: rgba(16, 16, 16, 0.95)}
+    span.s1 {font-kerning: none; background-color: #0e0e0e}
+    span.s2 {font-kerning: none; color: #f08d0e; background-color: #0e0e0e; -webkit-text-stroke: 0px #f08d0e}
+    span.s3 {font: 9.0px '.Apple Color Emoji UI'; font-kerning: none; background-color: #0e0e0e}
+    span.s4 {font: 8.0px '.Apple Color Emoji UI'; font-kerning: none}
+    span.s5 {font-kerning: none}
+    span.s6 {font-kerning: none; background-color: #0a0a0a}
+    span.s7 {font-kerning: none; background-color: #111111}
+    span.s8 {font: 22.0px 'Helvetica Neue'; font-kerning: none; color: #ffffff; background-color: #141414; -webkit-text-stroke: 0px #ffffff}
+    span.s9 {font: 12.0px 'Helvetica Neue'; font-kerning: none; background-color: #0e0e0e; -webkit-text-stroke: 0px #dfdfdf}
+    span.s10 {font: 9.0px 'Apple SD Gothic Neo'; font-kerning: none}
+    span.s11 {font: 18.0px '.Apple Color Emoji UI'; font-kerning: none; background-color: #141414; -webkit-text-stroke: 0px #dfdfdf}
+    span.s12 {font-kerning: none; background-color: #1f090a}
+    span.s13 {font: 26.0px 'Helvetica Neue'; font-kerning: none; color: #25bd4c; background-color: #0b200a; -webkit-text-stroke: 0px #25bd4c}
+    span.s14 {font: 12.0px 'Helvetica Neue'; font-kerning: none; color: #dfdfdf; background-color: #0e0e0e; -webkit-text-stroke: 0px #dfdfdf}
+  </style>
 </head>
-<body class="bg-slate-50">
-
-    <div id="toast" class="toast bg-gray-900/90 backdrop-blur text-white px-6 py-3 rounded-2xl shadow-2xl text-sm font-semibold border border-white/10">Mensaje</div>
-
-    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-40 p-4 shadow-sm border-b border-gray-100">
-        <div class="flex justify-between items-center">
-            <div>
-                <h1 class="text-2xl font-black text-blue-600 tracking-tighter">Scan&Go</h1>
-                <p id="view-title" class="text-[10px] text-gray-400 uppercase font-extrabold tracking-[0.2em]">Almacén</p>
-            </div>
-            <div class="flex gap-2 bg-gray-50 p-1 rounded-2xl border">
-                <button onclick="switchView('inventario')" id="btn-inventario" class="p-2.5 rounded-xl transition-all active:scale-90 bg-blue-600 text-white">📦</button>
-                <button onclick="switchView('clientes')" id="btn-clientes" class="p-2.5 rounded-xl transition-all active:scale-90 bg-gray-100 text-gray-500">👥</button>
-                <button onclick="switchView('publico')" id="btn-publico" class="p-2.5 rounded-xl transition-all active:scale-90 bg-gray-100 text-gray-500">🛒</button>
-            </div>
-        </div>
-    </header>
-
-    <div id="view-inventario" class="view-container active">
-        <div class="p-4 grid grid-cols-2 gap-3">
-            <div class="bg-white p-5 rounded-[2rem] border border-gray-100 shadow-sm">
-                <p class="text-[10px] text-gray-400 font-bold uppercase mb-1">Stock Total</p>
-                <p id="total-val" class="text-3xl font-black text-gray-800">0</p>
-            </div>
-            <div class="bg-white p-5 rounded-[2rem] border border-gray-100 shadow-sm">
-                <p class="text-[10px] text-gray-400 font-bold uppercase mb-1">Alertas</p>
-                <p id="alert-val" class="text-3xl font-black text-red-500">0</p>
-            </div>
-        </div>
-        <main id="list-inv" class="p-4 space-y-3"></main>
-    </div>
-
-    <div id="view-clientes" class="view-container">
-        <div class="p-4">
-            <div class="bg-gradient-to-br from-indigo-600 to-blue-700 text-white p-6 rounded-[2rem] shadow-lg mb-6">
-                <h3 class="font-bold text-lg">Suscripciones Anuales</h3>
-                <p class="text-xs opacity-80">Control de cobros y renovaciones.</p>
-            </div>
-            <div id="list-cli" class="space-y-3"></div>
-        </div>
-    </div>
-
-    <div id="view-publico" class="view-container">
-        <div class="p-4">
-            <h2 class="text-xl font-bold text-gray-800 mb-4">Catálogo de Productos</h2>
-            <div id="list-pub" class="grid grid-cols-1 gap-3"></div>
-        </div>
-    </div>
-
-    <nav id="nav-inv" class="bottom-nav border-t border-white/5">
-        <div class="flex gap-4 items-center px-6 w-full max-w-lg">
-            <button onclick="adjust(-1)" class="bg-white/10 text-white w-16 h-16 rounded-3xl flex items-center justify-center font-bold text-3xl border border-white/10">-</button>
-            <button onclick="mockScan()" class="flex-1 bg-blue-600 text-white h-16 rounded-3xl font-black shadow-lg text-sm uppercase tracking-[0.2em]">Escanear</button>
-            <button onclick="adjust(1)" class="bg-white/10 text-white w-16 h-16 rounded-3xl flex items-center justify-center font-bold text-3xl border border-white/10">+</button>
-        </div>
-    </nav>
-
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js').catch(err => console.log(err));
-            });
-        }
-
-        const state = {
-            items: JSON.parse(localStorage.getItem('sg_items')) || [
-                { id: "1", name: "Papel A4 Premium", price: 5.50, stock: 120, img: "📄" },
-                { id: "2", name: "Tóner Negro XL", price: 89.00, stock: 5, img: "🖨️" },
-                { id: "3", name: "Bolígrafos (Caja 50)", price: 15.00, stock: 45, img: "🖋️" }
-            ],
-            customers: JSON.parse(localStorage.getItem('sg_customers')) || [
-                { id: "c1", name: "Librería Central", status: "Al día", nextPay: "12 Oct 2025", phone: "34600000000" },
-                { id: "c2", name: "Oficina Norte", status: "Pendiente", nextPay: "01 Mar 2024", phone: "34611111111" }
-            ],
-            selectedId: null
-        };
-
-        function save() {
-            localStorage.setItem('sg_items', JSON.stringify(state.items));
-            localStorage.setItem('sg_customers', JSON.stringify(state.customers));
-        }
-
-        function switchView(v) {
-            document.querySelectorAll('.view-container').forEach(c => c.classList.remove('active'));
-            document.querySelectorAll('header button').forEach(b => {
-                b.classList.remove('bg-blue-600', 'text-white');
-                b.classList.add('bg-gray-100', 'text-gray-500');
-            });
-            document.getElementById('view-' + v).classList.add('active');
-            const btn = document.getElementById('btn-' + v);
-            btn.classList.replace('bg-gray-100', 'bg-blue-600');
-            btn.classList.replace('text-gray-500', 'text-white');
-            document.getElementById('nav-inv').style.transform = (v === 'inventario') ? 'translateY(0)' : 'translateY(150px)';
-            document.getElementById('view-title').innerText = v === 'inventario' ? 'Almacén' : (v === 'clientes' ? 'Suscripciones' : 'Catálogo');
-            render();
-        }
-
-        function render() {
-            const invList = document.getElementById('list-inv');
-            if(invList) {
-                invList.innerHTML = state.items.map(i => `
-                    <div onclick="state.selectedId='${i.id}';render()" class="product-card bg-white p-5 rounded-[2rem] flex items-center shadow-sm border ${state.selectedId === i.id ? 'border-blue-500 bg-blue-50' : 'border-transparent'}">
-                        <div class="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-2xl">${i.img}</div>
-                        <div class="ml-4 flex-1">
-                            <p class="font-bold text-gray-800 text-sm">${i.name}</p>
-                            <p class="text-blue-600 font-extrabold text-xs">${i.price.toFixed(2)}€</p>
-                        </div>
-                        <div class="text-right"><p class="font-black text-2xl ${i.stock < 10 ? 'text-red-500' : 'text-gray-800'}">${i.stock}</p></div>
-                    </div>
-                `).join('');
-                document.getElementById('total-val').innerText = state.items.length;
-                document.getElementById('alert-val').innerText = state.items.filter(i => i.stock < 10).length;
-            }
-
-            const cliList = document.getElementById('list-cli');
-            if(cliList) {
-                cliList.innerHTML = state.customers.map(c => `
-                    <div class="bg-white p-5 rounded-3xl border border-gray-100 shadow-sm mb-3">
-                        <div class="flex justify-between items-center mb-3">
-                            <div><p class="font-bold text-gray-800">${c.name}</p><p class="text-[10px] text-gray-400 uppercase font-bold tracking-wider">Pago: ${c.nextPay}</p></div>
-                            <span class="px-3 py-1 rounded-full text-[10px] font-bold ${c.status === 'Al día' ? 'bg-green-100 text-green-600' : 'bg-red-100 text-red-600'}">${c.status}</span>
-                        </div>
-                        ${c.status === 'Pendiente' ? `<button onclick="window.open('https://wa.me/${c.phone}?text=Recordatorio%20de%20pago')" class="w-full py-2 bg-emerald-500 text-white rounded-xl text-[10px] font-bold uppercase">Avisar WhatsApp</button>` : ''}
-                    </div>
-                `).join('');
-            }
-
-            const pubList = document.getElementById('list-pub');
-            if(pubList) {
-                pubList.innerHTML = state.items.map(i => `
-                    <div class="bg-white p-4 rounded-3xl border border-gray-100 flex items-center justify-between mb-2">
-                        <div class="flex items-center"><span class="text-2xl mr-3">${i.img}</span><div><p class="font-bold text-gray-800 text-sm">${i.name}</p><p class="text-xs text-gray-400">${i.price.toFixed(2)}€</p></div></div>
-                        <span class="text-xs font-bold ${i.stock > 0 ? 'text-green-500' : 'text-red-500'}">${i.stock > 0 ? 'Disponible' : 'Agotado'}</span>
-                    </div>
-                `).join('');
-            }
-        }
-
-        function adjust(v) {
-            if(!state.selectedId) return toast("Toca un producto");
-            const i = state.items.find(x => x.id === state.selectedId);
-            if(i.stock + v >= 0) { i.stock += v; save(); render(); }
-        }
-
-        function mockScan() {
-            toast("Escaneando...");
-            setTimeout(() => {
-                const random = state.items[Math.floor(Math.random()*state.items.length)];
-                state.selectedId = random.id; render();
-                toast("Detectado: " + random.name);
-            }, 800);
-        }
-
-        function toast(t) {
-            const e = document.getElementById('toast');
-            e.innerText = t; e.classList.add('show');
-            setTimeout(() => e.classList.remove('show'), 2000);
-        }
-
-        render();
-    </script>
+<body>
+<p class="p1"><span class="s1">SCAN</span><span class="s2">&amp;</span><span class="s1">GO</span></p>
+<p class="p2"><span class="s3">📍</span><span class="s1"> Cargando...</span></p>
+<p class="p3"><span class="s4">🔗</span><span class="s5"> —</span></p>
+<p class="p4"><span class="s5">● LIVE</span></p>
+<p class="p5"><span class="s6">INVENTARIO</span></p>
+<p class="p6"><span class="s6">CATÁLOGO</span></p>
+<p class="p6"><span class="s6">+ AÑADIR</span></p>
+<p class="p7"><span class="s5">Ndowe</span></p>
+<p class="p8"><span class="s5"></span><br></p>
+<p class="p9"><span class="s7">ARTÍCULOS</span></p>
+<p class="p10"><span class="s7">0</span></p>
+<p class="p9"><span class="s7">STOCK BAJO</span></p>
+<p class="p11"><span class="s7">0</span></p>
+<p class="p12"><span class="s5"></span><br></p>
+<p class="p9"><span class="s5">ARTÍCULOS EN ALMACÉN</span></p>
+<p class="p12"><span class="s5"></span><br></p>
+<p class="p13"><span class="s8">−</span><span class="s9"> </span><span class="s10">▣</span><span class="s5"> ESCANEAR</span><span class="s9"> </span><span class="s11">📷</span><span class="s9"> </span><span class="s8">+</span></p>
+<p class="p14"><span class="s1">AJUSTAR STOCK</span></p>
+<p class="p15"><span class="s1">—</span></p>
+<p class="p16"><span class="s1">—</span></p>
+<p class="p11"><span class="s12">−</span></p>
+<p class="p17"><span class="s1">0</span></p>
+<p class="p18"><span class="s13">+</span><span class="s14"> </span><span class="s5">CERRAR</span></p>
+<p class="p19"><span class="s5">—</span></p>
 </body>
 </html>
