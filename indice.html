@@ -94,7 +94,7 @@
     </div>
 
     <nav id="nav-inv" class="bottom-nav border-t border-white/5">
-        <div class="flex gap-4 items-center px-6 w-full max-lg">
+        <div class="flex gap-4 items-center px-6 w-full max-w-lg">
             <button onclick="adjust(-1)" class="bg-white/10 text-white w-16 h-16 rounded-3xl flex items-center justify-center font-bold text-3xl border border-white/10">-</button>
             <button onclick="mockScan()" class="flex-1 bg-blue-600 text-white h-16 rounded-3xl font-black shadow-lg text-sm uppercase tracking-[0.2em]">Escanear</button>
             <button onclick="adjust(1)" class="bg-white/10 text-white w-16 h-16 rounded-3xl flex items-center justify-center font-bold text-3xl border border-white/10">+</button>
@@ -207,3 +207,25 @@
     </script>
 </body>
 </html>
+
+
+2. Archivo: manifest.json
+
+{
+  "name": "Scan&Go Pro",
+  "short_name": "Scan&Go",
+  "description": "Gestión de Inventario y Suscripciones",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#2563eb",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "[https://cdn-icons-png.flaticon.com/512/3244/3244125.png](https://cdn-icons-png.flaticon.com/512/3244/3244125.png)",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
