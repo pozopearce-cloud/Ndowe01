@@ -1,35 +1,18 @@
 {
   "name": "Scan&Go Pro",
   "short_name": "Scan&Go",
-  "description": "Gestión de inventario y catálogo para pequeños almacenes",
-  "start_url": "./index.html",
+  "description": "Gestión de Inventario y Suscripciones",
+  "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#0a0a0a",
-  "theme_color": "#0a0a0a",
+  "background_color": "#f8fafc",
+  "theme_color": "#2563eb",
   "orientation": "portrait",
-  "lang": "es",
-  "categories": ["business", "productivity"],
   "icons": [
     {
-      "src": "icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "icon-512.png",
+      "src": "[https://cdn-icons-png.flaticon.com/512/3244/3244125.png](https://cdn-icons-png.flaticon.com/512/3244/3244125.png)",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
-    }
-  ],
-  "shortcuts": [
-    {
-      "name": "Añadir artículo",
-      "short_name": "Añadir",
-      "description": "Añadir nuevo artículo al inventario",
-      "url": "./index.html#anadir",
-      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
     }
   ]
 }
